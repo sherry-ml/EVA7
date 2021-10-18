@@ -3,6 +3,10 @@
 
 Assignment Part 1
 ------------------
+
+![image](https://user-images.githubusercontent.com/67177106/137680422-d1aba6cd-eca4-485d-a6ec-97e49e78fce6.png)
+
+
 We have been provided with initial parameters as under
 
     w1 = 0.15	w2 = 0.2	w3 = 0.25	w4 = 0.3
