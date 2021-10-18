@@ -163,54 +163,17 @@ Learning Rate : 2
 2) Achieved 99.4% accuracy in 17th Epoch
 
 
-## Model Parameters
------------------------
+Model is basically divided into 5 blocks:
+1) First block takes the input of 28*28*1, increases the number of channels to 32, utilizes 3*3 kernel size and produces output of 22*22*32 where 22*22 is the feature map size and 32 is the number of channels. We use relu as activation function and make use of dropouts and batch normalization.
+2) Second block takes 22*22*32 as input and reduces it 11*11*16 using a combination of convolution layer and maxpool function.
+3) Third block takes 11*11*16 as input and reduces it to 5*5*32 using convolution layers with kernel size of 3*3. We use relu as activation function and utilize dropouts and batch normalization. 
+4) Fourth block takes 5*5*32 as input and reduces the channel numbers to 5*5*10.
+5) At fifth block we use global average pooling to further reduce it to 1*1*10
 
-    ----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-    ================================================================
-            Conv2d-1           [-1, 16, 26, 26]             144
-       BatchNorm2d-2           [-1, 16, 26, 26]              32
-              ReLU-3           [-1, 16, 26, 26]               0
-         Dropout2d-4           [-1, 16, 26, 26]               0
-            Conv2d-5           [-1, 16, 24, 24]           2,304
-       BatchNorm2d-6           [-1, 16, 24, 24]              32
-              ReLU-7           [-1, 16, 24, 24]               0
-            Conv2d-8           [-1, 32, 22, 22]           4,608
-       BatchNorm2d-9           [-1, 32, 22, 22]              64
-             ReLU-10           [-1, 32, 22, 22]               0
-        Dropout2d-11           [-1, 32, 22, 22]               0
-           Conv2d-12           [-1, 16, 22, 22]             528
-             ReLU-13           [-1, 16, 22, 22]               0
-        MaxPool2d-14           [-1, 16, 11, 11]               0
-           Conv2d-15             [-1, 16, 9, 9]           2,304
-      BatchNorm2d-16             [-1, 16, 9, 9]              32
-             ReLU-17             [-1, 16, 9, 9]               0
-        Dropout2d-18             [-1, 16, 9, 9]               0
-           Conv2d-19             [-1, 16, 9, 9]           2,304
-      BatchNorm2d-20             [-1, 16, 9, 9]              32
-             ReLU-21             [-1, 16, 9, 9]               0
-        Dropout2d-22             [-1, 16, 9, 9]               0
-           Conv2d-23             [-1, 16, 7, 7]           2,304
-      BatchNorm2d-24             [-1, 16, 7, 7]              32
-             ReLU-25             [-1, 16, 7, 7]               0
-        Dropout2d-26             [-1, 16, 7, 7]               0
-           Conv2d-27             [-1, 32, 5, 5]           4,608
-      BatchNorm2d-28             [-1, 32, 5, 5]              64
-             ReLU-29             [-1, 32, 5, 5]               0
-        Dropout2d-30             [-1, 32, 5, 5]               0
-           Conv2d-31             [-1, 10, 5, 5]             320
-        AvgPool2d-32             [-1, 10, 1, 1]               0
-    ================================================================
-    Total params: 19,712
-    Trainable params: 19,712
-    Non-trainable params: 0
-    ----------------------------------------------------------------
-    Input size (MB): 0.00
-    Forward/backward pass size (MB): 1.28
-    Params size (MB): 0.08
-    Estimated Total Size (MB): 1.35
-    ----------------------------------------------------------------
+Output from fifth block is resized to 1*10 and then fed into log_softmax function which performs softmax function followed by logarithm operation. 
+We are using Adam as opimizer with learning rate of 0.01 and default values of betas. We are using negative log likelihood as the loss function.
+
+
 
 Training Logs :
 
