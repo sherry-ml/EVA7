@@ -164,13 +164,13 @@ Learning Rate : 2
 
 
 Model is basically divided into 5 blocks:
-1) First block takes the input of 28*28*1, increases the number of channels to 32, utilizes 3*3 kernel size and produces output of 22*22*32 where 22*22 is the feature map size and 32 is the number of channels. We use relu as activation function and make use of dropouts and batch normalization.
-2) Second block takes 22*22*32 as input and reduces it 11*11*16 using a combination of convolution layer and maxpool function.
-3) Third block takes 11*11*16 as input and reduces it to 5*5*32 using convolution layers with kernel size of 3*3. We use relu as activation function and utilize dropouts and batch normalization. 
-4) Fourth block takes 5*5*32 as input and reduces the channel numbers to 5*5*10.
-5) At fifth block we use global average pooling to further reduce it to 1*1*10
+1) First block takes the input of 28 * 28 * 1, increases the number of channels to 32, utilizes 3 * 3 kernel size and produces output of 22 * 22 * 32 where 22 * 22 is the feature map size and 32 is the number of channels. We use relu as activation function and make use of dropouts and batch normalization.
+2) Second block takes 22 * 22 * 32 as input and reduces it 11 * 11 * 16 using a combination of convolution layer and maxpool function.
+3) Third block takes 11 * 11 * 16 as input and reduces it to 5 * 5 * 32 using convolution layers with kernel size of 3 * 3. We use relu as activation function and utilize dropouts and batch normalization. 
+4) Fourth block takes 5 * 5 * 32 as input and reduces the channel numbers to 5 * 5 * 10.
+5) At fifth block we use global average pooling to further reduce it to 1 * 1 * 10
 
-Output from fifth block is resized to 1*10 and then fed into log_softmax function which performs softmax function followed by logarithm operation. 
+Output from fifth block is resized to 1 * 10 and then fed into log_softmax function which performs softmax function followed by logarithm operation. 
 We are using Adam as opimizer with learning rate of 0.01 and default values of betas. We are using negative log likelihood as the loss function.
 
 
