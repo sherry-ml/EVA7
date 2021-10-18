@@ -1,18 +1,137 @@
 # Assignments Session 4
 ----------------------------
 
+Assignment Part 1
+------------------
+We have been provided with initial parameters as under
+w1 = 0.15	w2 = 0.2	w3 = 0.25	w4 = 0.3
+w5 = 0.4	w6 = 0.45	w7 = 0.5	w8 = 0.55
+i1 = 0.05, i2 =0.1
+t1 = 0.01, t2 = 099
+where w{i} are weights, i{i} are inputs, t{i} are target values
+
+## Feedforward Process
+--------------------------
+We have two neurons in first layers. These act as small temporary computation unit aggregating incoming input values and weights. Their calculation is shown as under:
+  h1 =w1*i1+w2+i2
+  h2 =w3*i1+w4*i2
+
+Next, we apply activation function on top of h1 and h2. This is to add non-linearity in the computations.
+  a_h1 = σ(h1) = 1/(1+exp(-h1))
+  a_h2 = σ(h2) = 1/(1+exp(-h2))
+
+a_h1 and a_h2 now act as input to neurons in next layer. Since we have only input and output layer. a_h1 and a_h2 act as input to neurons in output layer (o1 and o2)
+
+  o1 = w5 * a_h1 + w6 * a_h2
+  o2 = w7 * a_h1 + w8 * a_h2
+  
+  Next we apply sigmoid function on top of o1 and o2
+  
+  a_o1 = σ(o1) = 1/(1+exp(-o1))
+  a_o2 = σ(o2) = 1/(1+exp(-o2))
+
+This completed our first feedforward preocess.
+
+## Error Computation
+----------------------
+From the final values obtained from two neorons in output layer, we need to compute loss value. Loss value is the difference between output value and desired output value. Now if we just take absolute value of the different it is called L1 Loss. If we square the difference, it is called L2 Loss. We will be using L2 loss. This can be computed as under:
+
+E1 = ½ * ( t1 - a_o1)²
+E2 = ½ * ( t2 - a_o2)²
+E_Total = E1 + E2
+
+Here is 1/2 is included only for mathematical convenience.
+
+## Backpropagation
+--------------------
+The way backpropagation works is: 
+  1) First we calculate the gradient of loss function with respect to each of the weights. Here we are excluding biases since we assume those are set to False. This step is performed when we write loss.backward() in pytorch code.
+  2) Next, we adjust weights such that new weight is equal to difference between old weight and product of learning rate with gradient of loss function with respect to respective weight. So, reaching optimum weight value is dependent on two things -- how steep the gradient is and how big the step is (learning rate). When learning rate is set too high, it may just oscillate from one side to another overshoooting the loss minima. Setting it too low will cause the process to reach loss minima very slow. Weights are recalculated when we perform optimizer.step() function in pytorch.
+
+So, in this case we will have to calculate gradient of E_total with respect to all weights(w1,w2,w3,w4,w5,w6,w7,w8)
+
+We start first with weights closest to last layer. 
+
+δE_total/δw5 = δ(E1 +E2)/δw5
+
+δE_total/δw5 = δ(E1)/δw5       # removing E2 as there is no impact from E2 wrt w5	
+             = (δE1/δa_o1) * (δa_o1/δo1) * (δo1/δw5)	# Using Chain Rule
+             = (δ(½ * ( t1 - a_o1)²) /δa_o1= (t1 - a_o1) * (-1) = (a_o1 - t1))   # calculate how much does the output of a_o1 change with respect Error
+                * (δ(σ(o1))/δo1 = σ(o1) * (1-σ(o1)) = a_o1                       # calculate how much does the output of o1 change with respect a_o1
+                * (1 - a_o1 )) * a_h1                                            # calculate how much does the output of w5 change with respect o1
+             = (a_o1 - t1 ) *a_o1 * (1 - a_o1 ) * a_h1
+
+δE_total/δw5 = (a_o1 - t1 ) *a_o1 * (1 - a_o1 ) * a_h1
+δE_total/δw6 = (a_o1 - t1 ) *a_o1 * (1 - a_o1 ) * a_h2
+δE_total/δw7 = (a_o2 - t2 ) *a_o2 * (1 - a_o2 ) * a_h1
+δE_total/δw8 = (a_o2 - t2 ) *a_o2 * (1 - a_o2 ) * a_h2
+
+Next we calculate gradients with respect to weights in the next layer which is the first layer and the only layer left.
+
+δE_total/δa_h1 = δ(E1+E2)/δa_h1 
+               = (a_o1 - t1) * a_o1 * (1 - a_o1 ) * w5 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7
+               
+δE_total/δa_h2 = δ(E1+E2)/δa_h2 
+               = (a_o1 - t1) * a_o1 * (1 - a_o1 ) * w6 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w8
+
+δE_total/δw1 = δE_total/δw1 = δ(E_total)/δa_o1 * δa_o1/δo1 * δo1/δa_h1 * δa_h1/δh1 * δh1/δw1
+             = ((a_o1 - t1) * a_o1 * (1 - a_o1 ) * w5 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7) * a_h1 * (1- a_h1) * i1
+             
+
+δE_total/δw2 = ((a_o1 - t1) * a_o1 * (1 - a_o1 ) * w5 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7) * a_h1 * (1- a_h1) * i2
+δE_total/δw3 = ((a_o1 - t1) * a_o1 * (1 - a_o1 ) * w6 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w8) * a_h2 * (1- a_h2) * i1
+δE_total/δw4 = ((a_o1 - t1) * a_o1 * (1 - a_o1 ) * w6 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w8) * a_h2 * (1- a_h2) * i2
+
+Now that we have gradient of Total Loss with respect to all the weights in our neural network, its time for second step, ie, to update weights.
+
+    w1 = w1 - learning_rate * δE_total/δw1
+    w2 = w2 - learning_rate * δE_total/δw2
+    w3 = w3 - learning_rate * δE_total/δw3
+    w4 = w4 - learning_rate * δE_total/δw4
+    w5 = w5 - learning_rate * δE_total/δw5
+    w8 = w6 - learning_rate * δE_total/δw6
+    w7 = w7 - learning_rate * δE_total/δw7
+    w8 = w8 - learning_rate * δE_total/δw8
+
+This completes backpropagation process for this iteration.
+
+Now when the next datapoint or batch is fed into neural network, it will use updated weights. Feedforwward process will happen followed by backpropagation and so on. This process will continue till weights are no longer updated or loss function reaches its minimum value, at which point network training stops effectively.
+
+Learning Rate : 0.1
+
+![image](https://user-images.githubusercontent.com/67177106/137674930-326b8024-f44e-404a-883b-b09c86277744.png)
+
+Learning Rate : 0.2
+
+![image](https://user-images.githubusercontent.com/67177106/137674978-a20326c8-99b7-4d0c-8a4d-92aa326dda86.png)
+
+Learning Rate : 0.5
+
+![image](https://user-images.githubusercontent.com/67177106/137675119-f7e97ccb-7a05-482e-a87a-05222fa7193c.png)
+
+
+Learning Rate : 0.8
+
+![image](https://user-images.githubusercontent.com/67177106/137675161-90eae800-37b1-4de0-a605-365bf34c1b17.png)
+
+
+Learning Rate: 1
+
+![image](https://user-images.githubusercontent.com/67177106/137675216-cce3d352-3d2f-4fc5-b585-e682dd11f46e.png)
+
+Learning Rate : 2
+
+![image](https://user-images.githubusercontent.com/67177106/137675243-da79ed3f-6965-44c8-a5a0-4a8d02c29929.png)
 
 
 
 
-![image](https://user-images.githubusercontent.com/67177106/137669498-e831ab8a-68e0-4632-afc7-fd8c6b035652.png)
 
 
+## Assignment Part 2
+---------------------------------
 
-
-Assignment Part 2
-
-1) Number of parameters used : 19712
+1) Number of parameters used < 20000
 2) Achieved 99.4% accuracy in 17th Epoch
 
 
