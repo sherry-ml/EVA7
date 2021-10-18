@@ -4,7 +4,8 @@
 Assignment Part 1
 ------------------
 
-![image](https://user-images.githubusercontent.com/67177106/137680422-d1aba6cd-eca4-485d-a6ec-97e49e78fce6.png)
+![image](https://user-images.githubusercontent.com/67177106/137684719-641b7ab2-e3e5-4ddf-865c-97aef86dfaa6.png)
+
 
 
 We have been provided with initial parameters as under
