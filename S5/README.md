@@ -1,8 +1,9 @@
 # Session 5 Assignment
 
-####################################################################################################################################################################
+#################################################################################################
 
 ### Step 1 : Reduce number of parameters in model.
+__________________________________________________
 
 Link : https://github.com/sherry-ml/EVA7/blob/main/S5/Step%201%20Reduced%20Parameters%20Session%205%20Assignment.ipynb
 
@@ -28,6 +29,7 @@ Next we will further try to reduce number of parameters and see if we can mainta
 _________________________________________________________________________________________________________________________________________________________________________
 
 ### Step 1.1 : Bring down the number of parameters further.
+___________________________________________________________
 
 Link : https://github.com/sherry-ml/EVA7/blob/main/S5/Step%201.1%20Further%20Reduce%20Parameters%20Session%205%20Assignment.ipynb
 
@@ -51,9 +53,10 @@ Both Test and Train accuracy has gone down slightly. Considering the number of p
 
 Next we will introduce Batch Normalization and see if it improves the performance.
 
-#########################################################################################################################################################################
+###########################################################################################
 
 ### Step 2: Increase model performance by adding Batch Normalization
+____________________________________________________________________
 
 Link : https://github.com/sherry-ml/EVA7/blob/main/S5/Step%202%20Batch%20Normalization%20Session%205%20Assignment.ipynb
 
@@ -79,9 +82,10 @@ Model is overfitting.
 
 There seems to be some difference between train and test accuracy. We want to further regularize the training process. We will introduce dropout next.
 
-#########################################################################################################################################################################
+###############################################################################################
 
 ### Step 3: Regularize model training by adding dropouts.
+_________________________________________________________
 
 Link: https://github.com/sherry-ml/EVA7/blob/main/S5/Step%203%20Introduction%20of%20Dropouts%20Session%205%20Assignment.ipynb
 
@@ -112,6 +116,7 @@ Next we will reduce dropout probability to see if it increases the performance
 ___________________________________________________________________________________________________________________________________________________________________
 
 ### Step 3.1 : Change Dropout probability to increase model performance.
+________________________________________________________________________
 
 Link : https://github.com/sherry-ml/EVA7/blob/main/S5/Step%203.1%20Reduce%20Dropout%20Probability%20Session%205%20Assignment.ipynb
 
@@ -143,9 +148,10 @@ Increase in training and test performance and reduction of extent of underfittin
 
 However, we are still below our target accuracy of 99.4 in 15 epochs. We will try to introduce some image augmentation in next step.
 
-#####################################################################################################################################################################
+########################################################################################
 
 Step 4 : Add Image augmentation.
+________________________________
 
 Link: https://github.com/sherry-ml/EVA7/blob/main/S5/Step%204%20Image%20Augmentation%20Session%205%20Assignment.ipynb
 
@@ -175,9 +181,10 @@ Image augmentation has not helped here.
 
 We are still below our target accuracy of 99.4 in 15 epochs. We will try to play around with learning rates and see if it helps in increasing the performance.
 
-##########################################################################################################################################################################
+#####################################################################################################
 
 Step 5: Increase training and test performance by increasing learning rate.
+____________________________________________________________________________
 
 Link: https://github.com/sherry-ml/EVA7/blob/main/S5/Step%205%20Change%20Learning%20Rate%20Session%205%20Assignment.ipynb
 
@@ -208,6 +215,7 @@ We are more close to our target for 99.4% test accuracy but still short of it. N
 _______________________________________________________________________________________________________________________________________________________________________
 
 Step 5.1 : Increase training and test performance by introducing variable learning rates(OneCycleLR)
+______________________________________________________________________________________________________
 
 Link: https://github.com/sherry-ml/EVA7/blob/main/S5/Step%205.1%20Introduce%20Variable%20Learning%20Rates%20Session%205%20Assignment.ipynb
 
@@ -240,6 +248,7 @@ However, we need to show 99.4% test accuracy consistently in last few epochs. We
 __________________________________________________________________________________________________________________________________________________________________
 
 Step 5.2 : Increase training and test performane by changing optimizer from SGD to Adam
+_________________________________________________________________________________________
 
 Link: https://github.com/sherry-ml/EVA7/blob/main/S5/Step%205.2%20Change%20Optimizer%20Session%205%20Assignment.ipynb
 
