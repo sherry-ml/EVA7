@@ -276,4 +276,9 @@ There is a marginal increase in test accuracy. We have hit the target of 99.4 te
 
 Difference between train and test accuracy in last epoch is just.01 which indicates there is almost no underfitting or overfitting
 
-#############################################################################################################################################################################
+#################################################################################################
+
+Training Logs for last 6 epochs of final model
+
+![image](https://user-images.githubusercontent.com/67177106/138746231-028df95c-584d-4788-a8d2-91e2827bfb6e.png)
+
