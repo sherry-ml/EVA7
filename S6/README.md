@@ -41,11 +41,14 @@ Graphs showing Training/Test Loss/Accuracies
  Collection of misclassified images
  
  Batch Normalization misclassified images
+ 
  ![image](https://user-images.githubusercontent.com/67177106/139723533-86725493-1d90-4339-b961-b1701d4fde15.png)
 
 Layer Normalization misclassified images
+
 ![image](https://user-images.githubusercontent.com/67177106/139723654-49385af8-719e-4eac-8ba9-7d4920b10c5c.png)
 
 Group Normalization misclassified images
+
 ![image](https://user-images.githubusercontent.com/67177106/139723740-dbc44346-4f13-4c2c-b8a5-74ccb68e8f3e.png)
 
