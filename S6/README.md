@@ -29,7 +29,17 @@ Group Normalization
 
 ### Part 3 
 Findings for normalization techniques
-To be Added
+------------------------------------------------------------------------------------------------------------
+
+1) As observed from training loss graph, model using Batch Normalization + L1 regularization starts with lower training loss when compared to Layer and Group normalization. Training Loss graph of layer and group normalization follow almost similar paths across the epochs. Batch Normalization + L1 training loss starts from a lower value and hits low point in fewer epochs than layer/group normalization, after which it doesnt decreases much. However, layer and group normalization takes the training loss to further low values. Final training loss of layer/group normalization show lower value when compared with Batch Normalization+L1. This can also be attributed to the fact that we have applied L1 regularization on top of Batch Norm so it is bound to have higher training losses.
+
+2) Test Loss for Batch Normalization + L1 follows more zig zag path with high peaks when compared with layer and group normalization. Test Loss curve for layer normalization is more smooth than other two techniques. However, all the three technique end with almost same test loss value at the end of 20th epoch
+
+3) Batch Normalization + L1 reaches higher training accuracy in fewer epochs than other two techniques. Group and Layer Normalization training accuracy graphs almost follow similar curvature across epochs. From graph, it looks like training accuracy graphs for all three technique converge after 6 epochs
+
+4) Test Accuracy graphs present the same scenario for different normalization technique  as shown in test loss graph
+
+5) Batch Normalization + L1 tops the list with 60 misclassified images. Layer Normalization with 51 and Group Normalization with 53 misclassified images.
 
 ### Part 4
 
