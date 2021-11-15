@@ -53,6 +53,8 @@ This function is called after end of each training epoch completion. This functi
     - dropout=0.1: Amount of dropout to be applied when creating CNN model Default value is 0.1
     - lr=0.001: This is the learning rate that need to specified when creating optimizer object. Default is 0.001
     - device='cpu' : Device is cpu or cuda. Default value is cpu
+
+
 This function forms the main code block where each piece of participating code block mentioned above is called and integrated together. This function creates model object, optimizer objects, initializes various list object to hold train/test losses and accuracies. After creating necessary objects, it calls train function defined above passing relevant arguments followed by test function in a for loop that iterates for number of epochs passed to this function. At the end of each test function invocation, it evaluates if the test accuracy returned is greater than 85%. If yes then it breaks the loop, stores miclassified images along with their predicted and actual labels in a list object and returns model object to calling code.
 
 Main Notebook (https://github.com/sherry-ml/EVA7/blob/main/S7/Final_Submission_Session7_Assignment.ipynb): This notebook performs following tasks in order specified below:
