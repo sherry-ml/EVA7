@@ -41,6 +41,8 @@ This function iterates through train dataloader loading data in batches, passes 
     - test_losses: List object to store test loss for different epochs
     - test_acc: List object to store test acuracies for different epochs
     - epoch: Epoch number
+
+
 This function is called after end of each training epoch completion. This function passes data from test loader to trained model and then calculates loss and accuracy per batch. Test Losses and accuracies are added for all batches and then stored in corresponding list objects once all the data in test loader has been processed through model. At the end this function evaluates if the test accuracy for this epoch is greater than 85%. If yes, then it saves model weights in a file and prints its filename. This function returns test accuracy for this epoch to the calling code.
 
 5) model_training.py (https://github.com/sherry-ml/EVA7/blob/main/S7/model_training.py) : This file contains definition for train_test_model function which takes the following parameters:
