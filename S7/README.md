@@ -78,50 +78,9 @@ Main Notebook (https://github.com/sherry-ml/EVA7/blob/main/S7/Final_Submission_S
 
 ### Training Logs for last few epochs:
 
-
-EPOCH: 134
-100%|██████████| 391/391 [00:11<00:00, 33.01it/s]
- Average Training Loss=0.753562908782959, Accuracy=80.672
-Test set: Average loss: 0.4584, Accuracy: 8472/10000 (84.72%)
-
-EPOCH: 135
-100%|██████████| 391/391 [00:11<00:00, 33.64it/s]
- Average Training Loss=0.756516551361084, Accuracy=80.652
-Test set: Average loss: 0.4917, Accuracy: 8349/10000 (83.49%)
-
-EPOCH: 136
-100%|██████████| 391/391 [00:11<00:00, 32.99it/s]
- Average Training Loss=0.7552795533752441, Accuracy=80.596
-Test set: Average loss: 0.4706, Accuracy: 8403/10000 (84.03%)
-
-EPOCH: 137
-100%|██████████| 391/391 [00:11<00:00, 32.62it/s]
- Average Training Loss=0.7552378245544433, Accuracy=80.63
-Test set: Average loss: 0.4507, Accuracy: 8483/10000 (84.83%)
-
-EPOCH: 138
-100%|██████████| 391/391 [00:11<00:00, 33.14it/s]
- Average Training Loss=0.7606863624572754, Accuracy=80.468
-Test set: Average loss: 0.4525, Accuracy: 8445/10000 (84.45%)
-
-EPOCH: 139
-100%|██████████| 391/391 [00:11<00:00, 33.13it/s]
- Average Training Loss=0.7505462648773193, Accuracy=80.798
-Test set: Average loss: 0.4453, Accuracy: 8517/10000 (85.17%)
-
-Saved Model weights in file:  Session7_assignment_epoch_139_acc_85.17.pth
-Total Number of incorrectly predicted images by model type BN is 1483
-
+![image](https://user-images.githubusercontent.com/67177106/141820621-b62462f9-e6dd-4dc4-a930-6d2e08fe7570.png)
 #################################################################################################################################################################
 
 %age of images classified correctly per class
-Accuracy of plane : 82 %
-Accuracy of   car : 92 %
-Accuracy of  bird : 75 %
-Accuracy of   cat : 67 %
-Accuracy of  deer : 77 %
-Accuracy of   dog : 81 %
-Accuracy of  frog : 88 %
-Accuracy of horse : 92 %
-Accuracy of  ship : 93 %
-Accuracy of truck : 87 %
+
+![image](https://user-images.githubusercontent.com/67177106/141820710-e53e575b-cd66-4705-8841-e3632780dadd.png)
