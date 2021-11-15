@@ -7,10 +7,10 @@ We will first go through 5 code files which contain class and function definitio
 1) model_class.py ( https://github.com/sherry-ml/EVA7/blob/main/S7/model_class.py ) : This file contains model definition for our CNN. It consists of 4 convolution blocks, 3 transition blocks and 1 output block arranged in following order:
   - Convolution Block 1
   - Transition Block 1
-  - Convolution Block 2 ( First part of this block uses Depthwise Seperable Convolution)
+  - Convolution Block 2 ( First part of this block uses Depthwise Separable Convolution)
   - Transition Block 2
   - Convolution Block 3
-  - Transition Block 3 (First part of this block uses Dilated Convolution
+  - Transition Block 3 (First part of this block uses Dilated Convolution)
   - Convolution Block 4
   - Output Layer ( Consists of GAP layer)
   
