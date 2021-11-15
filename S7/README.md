@@ -31,7 +31,8 @@ We will first go through 5 code files which contain class and function definitio
     - train_losses: This is the list object passed to the function to store train losses for different epochs
     - train_acc: This is the list object passed to this function to store training accuracy for different aprochs
     - lambda_l1 : This is the value of L1 regularization constant to be applied if using L1 regularization. We are not using L1 regularization in this assignment. 
-   This function iterates through train dataloader loading data in batches, passes it through model, then calculate loss and perform gradient calculation and weight adjustment. Loss and accuracy for each batch is added up till the end of epoch which is then stored inside corresponding list objects passed onto this function.
+
+This function iterates through train dataloader loading data in batches, passes it through model, then calculate loss and perform gradient calculation and weight adjustment. Loss and accuracy for each batch is added up till the end of epoch which is then stored inside corresponding list objects passed onto this function.
    
 4) test_model.py (https://github.com/sherry-ml/EVA7/blob/main/S7/test_model.py) : This file contains test function definition which takes the following parameters:
     - model : This is the model object corresponding to CNN that we are training.
