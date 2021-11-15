@@ -1,6 +1,6 @@
 ### SESSION 7 Assignment
 
-Coding for this assignment is divided into 6 files out of which ones is main notebook where all the code is actually executed and remaining 5 contain class definitions and other function definitions which are executed in the main notebook.
+Code for this assignment is divided into 6 files out of which ones is main notebook where all the code is actually executed and remaining 5 contain class definitions and other function definitions which are executed in the main notebook.
 
 We will first go through 5 code files which contain class and function definitions:
 
