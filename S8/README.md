@@ -1,6 +1,6 @@
 ### Session 8 Assignment
 
-Main jupyter notebook is located at https://github.com/sherry-ml/EVA7/blob/main/S8/Session_8_Assignment.ipynb. It pulls the necessary functions and classes from https://github.com/sherry-ml/deep_dream_code and trains resnet18 models for 20 epochs
+Main jupyter notebook is located at https://github.com/sherry-ml/EVA7/blob/main/S8/Session_8_Assignment.ipynb. It pulls the necessary functions and classes from https://github.com/sherry-ml/deep_dream_code and trains resnet18 model for 20 epochs
 
 Torch Summary of resnet18 model
 
