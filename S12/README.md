@@ -47,5 +47,8 @@ Model Summary
 -------------------------------------
 ![image](https://user-images.githubusercontent.com/67177106/147410518-bd4a6fcf-084a-4056-bb50-5e1fe1b6d9cc.png)
 
+###VISUALIZING THE STN RESULTS
+----------------------------------------------
+
 ![image](https://user-images.githubusercontent.com/67177106/147410567-c8bea9f5-1c46-4fbe-9a0a-cddf6c1ae0db.png)
 
