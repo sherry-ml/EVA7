@@ -31,40 +31,16 @@ Credits and References :
 2) https://brsoff.github.io/tutorials/intermediate/spatial_transformer_tutorial.html
 
 
-Code Links : Colab Link : https://colab.research.google.com/drive/1G88k46k4DPNeMGGsEQQGWeWol_xv5ZAf?usp=sharing
+Code Links 
+--------------------------------------
+
+Colab Link : https://colab.research.google.com/drive/1G88k46k4DPNeMGGsEQQGWeWol_xv5ZAf?usp=sharing
+
 Github Link : https://github.com/sherry-ml/EVA7/blob/main/S12/Session%2012%20Assignment.ipynb
 
 Training Logs for last few epochs
-
-Train Epoch: 45 [0/50000 (0%)]	Loss: 0.799814
-Train Epoch: 45 [32000/50000 (64%)]	Loss: 0.621104
-
-Test set: Average loss: 1.0582, Accuracy: 6425/10000 (64%)
-
-Train Epoch: 46 [0/50000 (0%)]	Loss: 0.809948
-Train Epoch: 46 [32000/50000 (64%)]	Loss: 0.766220
-
-Test set: Average loss: 1.0207, Accuracy: 6545/10000 (65%)
-
-Train Epoch: 47 [0/50000 (0%)]	Loss: 0.811038
-Train Epoch: 47 [32000/50000 (64%)]	Loss: 0.527078
-
-Test set: Average loss: 1.0436, Accuracy: 6487/10000 (65%)
-
-Train Epoch: 48 [0/50000 (0%)]	Loss: 0.611828
-Train Epoch: 48 [32000/50000 (64%)]	Loss: 0.830341
-
-Test set: Average loss: 1.0407, Accuracy: 6506/10000 (65%)
-
-Train Epoch: 49 [0/50000 (0%)]	Loss: 0.688598
-Train Epoch: 49 [32000/50000 (64%)]	Loss: 0.910605
-
-Test set: Average loss: 1.0769, Accuracy: 6378/10000 (64%)
-
-Train Epoch: 50 [0/50000 (0%)]	Loss: 0.757543
-Train Epoch: 50 [32000/50000 (64%)]	Loss: 0.755971
-
-Test set: Average loss: 1.0757, Accuracy: 6488/10000 (65%)
+---------------------------------------
+![image](https://user-images.githubusercontent.com/67177106/147410634-1cdf4b0b-dca3-4cc6-9eed-f6708c32c292.png)
 
 
 Model Summary 
