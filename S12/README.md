@@ -25,3 +25,7 @@ Spatial transformers can be incorporated into CNNs to benefit multifarious tasks
 1) Image Classification: suppose a CNN is trained to perform multi-way classification of images according to whether they contain a particular digit – where the position and size of the digit may vary significantly with each sample (and are uncorrelated with the class); a spatial transformer that crops out and scale-normalizes the appropriate region can simplify the subsequent classification task, and lead to superior classification performance.
 2) Co-Localisation: Given a set of images containing different instances of the same (but unknown) class, a spatial transformer can be used to localise them in each image.
 3) Spatial Attention: A spatial transformer can be used for tasks requiring an attention mechanism but is more flexible and can be trained purely with backpropagation without reinforcement learning. A key benefit of using attention is that transformed (and so attended), lower resolution inputs can be used in favour of higher resolution raw inputs, resulting in increased computational efficiency.
+
+Credits : 
+1) https://arxiv.org/pdf/1506.02025.pdf (Spatial Transformer Networks)
+2) https://brsoff.github.io/tutorials/intermediate/spatial_transformer_tutorial.html
