@@ -52,3 +52,8 @@ Model Summary
 
 ![image](https://user-images.githubusercontent.com/67177106/147410567-c8bea9f5-1c46-4fbe-9a0a-cddf6c1ae0db.png)
 
+Contributors
+-------------------------
+Lavanya Nemani lavanyanemani96@gmail.com
+Shaheer Fardan shaheer.fardan@gmail.com
+
