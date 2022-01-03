@@ -54,7 +54,7 @@ Model Summary
 
 Contributors
 -------------------------
-Lavanya Nemani lavanyanemani96@gmail.com
+Lavanya Nemani
 
-Shaheer Fardan shaheer.fardan@gmail.com
+Shaheer Fardan
 
