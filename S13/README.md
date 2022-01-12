@@ -1,5 +1,12 @@
 # Session 13 Assignment
 
+Vision Transformer 
+-------------------
+Paper : https://arxiv.org/pdf/2010.11929.pdf
+
+![image](https://user-images.githubusercontent.com/67177106/149081898-fcc430e2-dc27-4d20-a74f-68af930670e8.png)
+
+
 Brief description of the code
 ------------------------------
 1) Code starts by downloading, unzipping train, test data and splitting them into train, validation and test data.
@@ -13,3 +20,12 @@ Brief description of the code
 10) Training process used in normal one. Take the input for dataloader, move the data and label to gpu, input the data into model and feed the output data along with original data into loss function following by zeroing out gradients, updating gradients and then updating weights and bias values. This followed by  calculating accuracy and loss for the epoch.
 
 
+Training Logs
+---------------
+![image](https://user-images.githubusercontent.com/67177106/149080757-9f6dc298-f293-4780-9f51-d0532adae26e.png)
+
+
+References:
+
+1) https://analyticsindiamag.com/hands-on-vision-transformers-with-pytorch/
+2) ViT Paper: https://arxiv.org/pdf/2010.11929.pdf
