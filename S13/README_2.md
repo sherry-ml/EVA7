@@ -11,4 +11,4 @@ It is a badly written code with huge scope for improvement and not suitable for 
 5) Class ViTSelfOutput takes output ViTSelfAttention object and passes it through a linear layer plus dropout operation
 6) Class ViTAttention combines the outputs from ViTSelfAttention and ViTSelfOutput objects.
 
-<<More to follow>>
+<< More to follow    >>
